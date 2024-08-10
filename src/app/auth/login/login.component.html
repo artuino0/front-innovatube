@@ -1,0 +1,43 @@
+<main>
+  <section class="flex gap-20">
+    <div class="w-3/5">
+      <h1>Ingresa a una Cuenta InnovaTube</h1>
+      <p class="text-gray-500">Ingresa tus credenciales</p>
+    </div>
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col grow items-end"
+    >
+      <input
+        placeholder="Nombre de usuario o correo electrónico"
+        id="username"
+        formControlName="username"
+      />
+
+      <label for="password"></label>
+
+      <input
+        placeholder="Contraseña"
+        id="password"
+        type="password"
+        formControlName="password"
+      />
+      <small class="is-info">Olvidaste tu contraseña?</small>
+
+      <small class="my-6 text-gray-500">
+        ¿Esta no es tu computadora? Usa el modo de invitado para navegar de
+        forma privada.
+      </small>
+
+      <div class="flex gap-3">
+        <button class="is-light" type="submit" (click)="createAccount()">
+          Crear cuenta
+        </button>
+        <button class="is-info" type="submit" [disabled]="registerForm.invalid">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </section>
+</main>

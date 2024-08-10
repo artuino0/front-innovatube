@@ -1,0 +1,13 @@
+<div class="flex">
+  <aside
+    class="phone:hidden tablet:block laptop:w-[250px] tablet:w-[90px] overflow-hidden flex-shrink-0 h-screen sticky top-0 left-0"
+  >
+    <app-sidemenu></app-sidemenu>
+  </aside>
+  <main class="grow">
+    <div class="sticky top-0 bg-white z-50"><app-navbar></app-navbar></div>
+    <section class="mb-10 w-full">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>

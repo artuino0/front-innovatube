@@ -1,0 +1,8 @@
+.auth{
+    @apply flex h-screen bg-[#f0f4f9] max-h-screen justify-center items-center;
+}
+
+.auth-form{
+    @apply bg-white rounded-3xl p-8 w-[60%] flex flex-col gap-3;
+}
+

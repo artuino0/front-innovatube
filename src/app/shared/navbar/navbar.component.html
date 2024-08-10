@@ -1,0 +1,19 @@
+<section class="w-full py-3 px-6 text-center">
+  <div class="grid grid-cols-3">
+    <div class="phone:col-span-3 laptop:col-span-2">
+      <input
+        type="text"
+        placeholder="Buscar con InnovaTube"
+        class="tablet:w-full laptop:w-[600px]"
+        [(ngModel)]="inputKeyword"
+      />
+    </div>
+    <div class="col-span-1 text-right phone:hidden laptop:block">
+      @if(!isAuth){
+      <button class="is-info" (click)="login()">Iniciar Sesión</button>
+      }@else{
+      <button class="is-info" (click)="login()">Cerrar Sesión</button>
+      }
+    </div>
+  </div>
+</section>

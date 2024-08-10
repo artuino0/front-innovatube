@@ -1,0 +1,63 @@
+<main>
+  <section class="flex gap-20">
+    <div class="w-3/5">
+      <h1>Crea una Cuenta InnovaTube</h1>
+      @if (currentStep===1) {
+
+      <p class="text-gray-600">Ingresa tu nombre</p>
+      } @else {
+      <p class="text-gray-600">Ingresa tu correo electrónico</p>
+      }
+    </div>
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col grow items-end"
+    >
+      @if (currentStep==1) {
+      <input placeholder="Nombre(s)" id="name" formControlName="name" />
+
+      <input
+        placeholder="Apellido(s)"
+        id="lastname"
+        formControlName="lastname"
+      />}@else{
+
+      <input
+        placeholder="Correo Electrónico"
+        id="email"
+        type="email"
+        formControlName="email"
+      />
+
+      <input
+        placeholder="Nombre de usuario"
+        id="username"
+        formControlName="username"
+      />
+
+      <label for="password"></label>
+
+      <input
+        placeholder="Contraseña"
+        id="password"
+        type="password"
+        formControlName="password"
+      />
+      } @if (currentStep==1) {
+      <button class="is-info" type="submit" (click)="nextStep()">
+        Siguiente
+      </button>
+      } @else {
+      <div class="flex gap-3">
+        <button class="is-light" type="submit" (click)="prevStep()">
+          Volver
+        </button>
+        <button class="is-info" type="submit" [disabled]="registerForm.invalid">
+          Registrarse
+        </button>
+      </div>
+      }
+    </form>
+  </section>
+</main>
